@@ -1,3 +1,4 @@
+from timer import function_timer
 import json
 from utils import callApi,writeJson,readJsonFile,createCSV,csvColoumIndexing,companyCSVHeaders
 from dotenv import load_dotenv
@@ -10,7 +11,9 @@ headers = {
       "accessToken": os.getenv("URL_ACCESS_TOKEN"),
     }
 
+@function_timer()
 def companyData():
+
     print("Fetching Company data")
 
     payLoad ={
